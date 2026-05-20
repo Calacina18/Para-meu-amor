@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nossa História ❤️</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--bg:#08030c;--card:rgba(255,255,255,.09);--line:rgba(255,255,255,.16);--text:#fff;--muted:#dacfe0;--pink:#ff3d81;--purple:#8b5cf6;--gold:#ffd166;--bad:#94a3b8}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at top left,rgba(255,61,129,.35),transparent 32%),radial-gradient(circle at bottom right,rgba(139,92,246,.35),transparent 35%),linear-gradient(135deg,#08030c,#190721,#08030c);color:var(--text);overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(#ffb3d1 1px,transparent 1px);background-size:70px 70px,120px 120px;background-position:0 0,30px 50px;opacity:.15;z-index:-2;animation:stars 24s linear infinite}
+    @keyframes stars{to{transform:translateY(-90px)}}
+    .hidden{display:none!important}.container{width:min(1100px,92%);margin:auto}.screen{min-height:100vh;padding:80px 0;display:flex;align-items:center}
+    .btn{border:0;cursor:pointer;border-radius:999px;padding:14px 24px;background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;font-weight:900;box-shadow:0 14px 35px rgba(255,61,129,.28);transition:.25s}.btn:hover{transform:translateY(-3px) scale(1.02)}.btn.secondary{background:rgba(255,255,255,.12);border:1px solid var(--line);box-shadow:none}
+    .tag{display:inline-flex;margin-bottom:18px;padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.12);color:#ffd7e7;font-size:.9rem}.title{font-size:clamp(2.1rem,6vw,4.7rem);line-height:1;margin-bottom:18px}.sub{color:var(--muted);line-height:1.8;font-size:1.05rem}
+    .intro{min-height:100vh;display:grid;place-items:center;text-align:center;padding:24px;position:relative}.intro:after{content:"❤️";position:absolute;font-size:320px;opacity:.06;animation:pulse 3s infinite}@keyframes pulse{50%{transform:scale(1.08)}}.intro-card{width:min(720px,100%);padding:42px 26px;border-radius:34px;background:var(--card);border:1px solid var(--line);backdrop-filter:blur(18px);box-shadow:0 22px 70px rgba(0,0,0,.45);position:relative;z-index:2;animation:fade .9s ease both}@keyframes fade{from{opacity:0;transform:translateY(25px)}}.intro h1{font-size:clamp(2.4rem,8vw,5.3rem);line-height:.95;margin-bottom:18px;background:linear-gradient(135deg,#fff,#ffd0e2,#c7b6ff);-webkit-background-clip:text;color:transparent}.intro p{max-width:620px;margin:0 auto 28px;color:var(--muted);line-height:1.7}
+    header{position:sticky;top:0;z-index:20;background:rgba(8,3,12,.72);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.1)}nav{width:min(1100px,92%);margin:auto;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 0}.logo{font-weight:900}.links{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.links a{text-decoration:none;color:var(--muted);padding:8px 12px;border-radius:999px;font-size:.9rem}.links a:hover{background:rgba(255,255,255,.12);color:#fff}
+    .hero-grid,.letter-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}.card{padding:28px;border-radius:30px;background:var(--card);border:1px solid var(--line);box-shadow:0 18px 55px rgba(0,0,0,.35)}.photo{height:410px;border-radius:26px;background:linear-gradient(rgba(0,0,0,.12),rgba(0,0,0,.55)),url('foto1.jpg');background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:22px;overflow:hidden}.caption{background:rgba(0,0,0,.38);border:1px solid var(--line);backdrop-filter:blur(10px);padding:14px;border-radius:18px}
+    .counter{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}.box{text-align:center;padding:22px 12px;border-radius:24px;background:var(--card);border:1px solid var(--line)}.box strong{display:block;font-size:clamp(2rem,5vw,3.2rem)}.box span{color:var(--muted)}
+    .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}.memory{min-height:390px;border-radius:28px;background:var(--card);border:1px solid var(--line);transition:.35s;position:relative;overflow:hidden;transform:translateY(35px);opacity:0}.memory.show{transform:translateY(0);opacity:1}.memory:before{content:"";position:absolute;inset:-2px;background:linear-gradient(135deg,transparent,rgba(255,61,129,.55),rgba(139,92,246,.55),transparent);opacity:0;transition:.35s;z-index:0}.memory:hover{transform:translateY(-10px) scale(1.015);background:rgba(255,255,255,.14);box-shadow:0 22px 70px rgba(255,61,129,.20)}.memory:hover:before{opacity:1}.memory>*{position:relative;z-index:1}.memory-img{height:210px;background-size:cover;background-position:center;position:relative;transition:.5s}.memory:hover .memory-img{transform:scale(1.06)}.memory-img:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.72))}.memory-content{padding:22px}.icon{font-size:2rem;margin-bottom:12px;animation:iconGlow 2.2s infinite ease-in-out}.memory h3{margin-bottom:10px}.memory p{color:var(--muted);line-height:1.7}.memory-date{display:inline-flex;margin-bottom:12px;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.13);color:#ffd7e7;font-size:.82rem;font-weight:800}.gallery{margin-top:34px;padding:18px;border-radius:30px;background:rgba(255,255,255,.08);border:1px solid var(--line);overflow:hidden}.gallery-title{margin-bottom:16px;color:#ffe5ef}.photo-strip{display:flex;gap:14px;animation:slidePhotos 22s linear infinite;width:max-content}.photo-card{width:210px;height:270px;border-radius:24px;background-size:cover;background-position:center;flex:0 0 auto;border:1px solid rgba(255,255,255,.18);box-shadow:0 14px 35px rgba(0,0,0,.35);position:relative;overflow:hidden}.photo-card:after{content:attr(data-text);position:absolute;left:12px;right:12px;bottom:12px;padding:10px;border-radius:16px;background:rgba(0,0,0,.45);backdrop-filter:blur(8px);font-weight:900;color:#fff;font-size:.9rem}.photo-strip:hover{animation-play-state:paused}@keyframes slidePhotos{from{transform:translateX(0)}to{transform:translateX(-50%)}}@keyframes iconGlow{50%{transform:translateY(-5px) scale(1.08);filter:drop-shadow(0 0 12px rgba(255,61,129,.7))}}.reveal{opacity:0;transform:translateY(30px);transition:.8s}.reveal.show{opacity:1;transform:translateY(0)}
+    .envelope{height:290px;border-radius:30px;background:linear-gradient(135deg,var(--pink),var(--purple));display:grid;place-items:center;box-shadow:0 18px 55px rgba(0,0,0,.35);position:relative;overflow:hidden}.envelope:before{content:"";position:absolute;inset:26px;border:2px solid rgba(255,255,255,.35);border-radius:22px;transform:rotate(-3deg)}.envelope span{font-size:4rem;animation:float 2.5s infinite ease-in-out}@keyframes float{50%{transform:translateY(-12px)}}.letter{min-height:320px;padding:30px;border-radius:30px;background:var(--card);border:1px solid var(--line)}.letter p{white-space:pre-line;color:#f6eaf2;line-height:1.9}
+    .game{margin-top:26px;border-radius:30px;overflow:hidden;border:1px solid var(--line);background:var(--card);box-shadow:0 18px 55px rgba(0,0,0,.35)}.game-top{padding:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;border-bottom:1px solid rgba(255,255,255,.12)}.pill{background:rgba(255,255,255,.12);padding:10px 14px;border-radius:999px;font-weight:800;color:#ffe7f0}#gameBoard{height:420px;position:relative;background:radial-gradient(circle at 50% 0,rgba(255,255,255,.12),transparent 35%),linear-gradient(180deg,rgba(22,6,31,.96),rgba(8,3,12,.98));overflow:hidden;touch-action:none}.player{width:64px;height:64px;position:absolute;left:50%;bottom:18px;transform:translateX(-50%);border-radius:50%;background:url('casal-player.jpg');background-size:cover;background-position:center;border:3px solid #fff;box-shadow:0 12px 30px rgba(255,61,129,.35),0 0 0 6px rgba(255,61,129,.16);user-select:none}.player:after{content:"❤️";position:absolute;right:-10px;top:-16px;font-size:1.4rem}.item{position:absolute;top:-50px;width:42px;height:42px;display:grid;place-items:center;font-size:1.9rem;user-select:none;animation:fall linear forwards}@keyframes fall{to{transform:translateY(500px) rotate(260deg)}}.tip{color:var(--muted);line-height:1.7;margin-top:16px}
+    .final-card{text-align:center;width:min(850px,100%);margin:auto;padding:40px 24px;border-radius:34px;background:var(--card);border:1px solid var(--line);box-shadow:0 18px 55px rgba(0,0,0,.35)}.final-card h2{font-size:clamp(2.2rem,7vw,5rem);margin-bottom:18px;background:linear-gradient(135deg,#fff,var(--gold),#ff7bad);-webkit-background-clip:text;color:transparent}.final-card p{max-width:680px;margin:0 auto 22px;color:var(--muted);line-height:1.8}.music{position:fixed;right:16px;bottom:16px;z-index:40;width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.13);color:#fff;backdrop-filter:blur(12px);cursor:pointer;font-size:1.2rem}.hearts{position:fixed;inset:0;pointer-events:none;z-index:50;overflow:hidden}.float-heart{position:absolute;bottom:-30px;font-size:24px;animation:up 4s linear forwards}@keyframes up{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+    @media(max-width:850px){.screen{padding:58px 0}.hero-grid,.letter-grid{grid-template-columns:1fr}.timeline{grid-template-columns:1fr}.counter{grid-template-columns:repeat(2,1fr)}nav{flex-direction:column}.links{justify-content:center}.photo{height:330px}.memory{min-height:auto}.memory-img{height:230px}#gameBoard{height:390px}}
+  </style>
+</head>
+<body>
+  <!-- PERSONALIZE AQUI:
+    1. Troque os nomes no texto.
+    2. Troque a data em const dataInicio = new Date('2025-01-01T00:00:00');
+    3. Coloque uma foto principal chamada foto1.jpg na mesma pasta.
+    4. Coloque fotos das memórias chamadas memoria1.jpg até memoria6.jpg.
+    5. Coloque fotos extras da galeria chamadas galeria1.jpg até galeria6.jpg.
+    6. Coloque uma foto do casal para o mini game chamada casal-player.jpg.
+    7. Coloque uma música chamada musica.mp3 na mesma pasta.
+  -->
+
+  <audio id="bgMusic" loop><source src="musica.mp3" type="audio/mpeg"></audio>
+  <button class="music hidden" id="musicBtn">🎵</button>
+  <div class="hearts" id="hearts"></div>
+
+  <section class="intro" id="intro">
+    <div class="intro-card">
+      <div class="tag">💌 Presente especial No final do  joguinho</div>
+      <h1>Nossa História</h1>
+      <p>Fiz isso para comemorar mais um capítulo da nossa história. Clique para começar.</p>
+      <button class="btn" id="startBtn">Começar surpresa ❤️</button>
+    </div>
+  </section>
+
+  <main id="site" class="hidden">
+    <header>
+      <nav>
+        <div class="logo">❤️ Nossa História</div>
+        <div class="links">
+          <a href="#inicio">Início</a><a href="#tempo">Tempo</a><a href="#memorias">Memórias</a><a href="#carta">Carta</a><a href="#jogo">Mini Game</a><a
+        </div>
+      </nav>
+    </header>
+
+    <section class="screen" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="tag"> Feliz aniversário de namoro</div>
+          <h2 class="title">Fiz essa surpresa para você</h2>
+          <p class="sub">Fiz para te mostrar meu amor por você .</p><br>
+          <a href="#jogo"><button class="btn">jogar o joguinho</button></a>
+          <a href="#carta"><button class="btn secondary">Ler carta</button></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="tempo">
+      <div class="container">
+        <h2 class="title">Nosso tempo juntos</h2>
+        <p class="sub">Desde o dia em que tudo começou, cada segundo virou parte da nossa história.</p>
+        <div class="counter">
+          <div class="box"><strong id="days">0</strong><span>dias</span></div>
+          <div class="box"><strong id="hours">0</strong><span>horas</span></div>
+          <div class="box"><strong id="minutes">0</strong><span>minutos</span></div>
+          <div class="box"><strong id="seconds">0</strong><span>segundos</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="memorias">
+      <div class="container reveal">
+        <h2 class="title">Fases da nossa história</h2>
+        <p class="sub">Como se fosse um jogo, cada momento nosso desbloqueou uma nova fase. Agora você pode colocar mais fotos e deixar a linha do tempo bem mais viva.</p>
+        <div class="timeline">
+         
+        </div>
+
+        <div class="gallery">
+          <h3 class="gallery-title">Galeria de lembranças</h3>
+          <div class="photo-strip">
+            <div class="photo-card" data-text="" style="background-image:url('image\ \(10\).jpg')"></div>
+            <div class="photo-card" data-text="" style="background-image:url('image\ \(11\).jpg')"></div>
+            <div class="photo-card" data-text="" style="background-image:url('image\ \(12\).jpg')"></div>
+            <div class="photo-card" data-text="" style="background-image:url('image\ \(13\).jpg')"></div>
+            <div class="photo-card" data-text="" style="background-image:url('image\ \(14\).jpg')"></div>
+            <div class="photo-card" data-text="..." style="background-image:url('image\ \(15\).jpg')"></div>
+            <div class="photo-card" data-text="" style="background-image:url('image\ \(16\).jpg')"></div>
+            <div class="photo-card" data-text="" style="background-image:url('image\ \(17\).jpg')"></div>
+            <div class="photo-card" data-text=" " style="background-image:url('image\ \(18\).jpg')"></div>
+            <div class="photo-card" data-text="" style="background-image:url('image\ \(19\).jpg')"></div>
+            <div class="photo-card" data-text="" style="background-image:url('image\ \(1\).jpg')"></div>
+            <div class="photo-card" data-text="" style="background-image:url('image\ \(20\).jpg')"></div>
+             <div class="photo-card" data-text="..." style="background-image:url('image\ \(21\).jpg')"></div>
+              <div class="photo-card" data-text="..." style="background-image:url('image\ \(22\).jpg')"></div>
+               <div class="photo-card" data-text="..." style="background-image:url('image\ \(23\).jpg')"></div>
+             <div class="photo-card" data-text="..." style="background-image:url('image\ \(24\).jpg')"></div>
+              <div class="photo-card" data-text="..." style="background-image:url('image\ \(25\).jpg')"></div>
+               <div class="photo-card" data-text="..." style="background-image:url('image\ \(1\).jpg')"></div>
+                <div class="photo-card" data-text="..." style="background-image:url('image\ \(2\).jpg')"></div>
+                 <div class="photo-card" data-text="..." style="background-image:url('image\ \(3\).jpg')"></div>
+                  <div class="photo-card" data-text="..." style="background-image:url('image\ \(4\).jpg')"></div>
+                   <div class="photo-card" data-text="..." style="background-image:url('image\ \(5\).jpg')"></div>
+                    <div class="photo-card" data-text="..." style="background-image:url('image\ \(6\).jpg')"></div>
+                     <div class="photo-card" data-text="..." style="background-image:url('image\ \(7\).jpg')"></div>
+                      <div class="photo-card" data-text="..." style="background-image:url('image\ \(8\).jpg')"></div>
+                       <div class="photo-card" data-text="..." style="background-image:url('image\ \(9\).jpg')"></div>
+                        <div class="photo-card" data-text="..." style="background-image:url('Amonovo.jpg')"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="carta">
+      <div class="container letter-grid">
+        <div class="envelope"><span>💌</span></div>
+        <div class="letter">
+          <h2 class="title">Uma carta para você</h2>
+          <p id="typedLetter"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="jogo">
+      <div class="container">
+        <h2 class="title">Mini game do amor</h2>
+        <p class="sub">Pegue 15 corações com a foto de vocês e desvie das nuvens tristes para liberar a mensagem final.</p>
+        <div class="game">
+          <div class="game-top">
+            <div class="pill">❤️ Corações: <span id="score">0</span>/15</div>
+            <div class="pill">⏱️ Tempo: <span id="timeLeft">40</span>s</div>
+            <button class="btn" id="playGameBtn">Iniciar jogo</button>
+          </div>
+          <div id="gameBoard"><div class="player" id="player"></div></div>
+        </div>
+        <p class="tip">No computador: use as setas do teclado. No celular: arraste o personagem para os lados.</p>
+      </div>
+    </section>
+
+    <section class="screen" id="final">
+      <div class="container">
+        <div class="final-card">
+          <div class="tag">🏆 Final desbloqueado</div>
+          <h2>Feliz aniversário de namoro ❤️</h2>
+          <p>Obrigado por fazer parte da minha vida. Eu quis transformar esse presente em uma experiência, porque você merece algo diferente, feito com carinho e com a minha cara.</p>
+          <p>Que venham muitos outros dias, muitas fases, muitas memórias e muitos motivos para sorrir juntos.</p>
+          <button class="btn" id="againBtn">Soltar corações</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // ====== PERSONALIZE AQUI ======
+    const nomePessoa = "meu amor";
+    const dataInicio = new Date('2025-02-20T00:00:00'); // troque pela data real do namoro
+    const textoCarta = `Oi, ${nomePessoa}.
+
+Eu queria fazer algo diferente para esse dia, então transformei um pouco do que eu sinto em um site e em um joguinho.
+
+Desde que você entrou na minha vida, muitas coisas ficaram mais leves, mais bonitas e mais especiais. Cada conversa, cada risada e cada momento nosso virou uma memória que eu guardo com carinho.
+
+Esse presente é simples, mas foi feito de coração. Obrigado por fazer parte da minha história.
+
+Feliz aniversário de namoro. ❤️`;
+
+    const intro = document.getElementById('intro');
+    const site = document.getElementById('site');
+    const startBtn = document.getElementById('startBtn');
+    const musicBtn = document.getElementById('musicBtn');
+    const bgMusic = document.getElementById('bgMusic');
+
+    startBtn.addEventListener('click', () => {
+      intro.classList.add('hidden');
+      site.classList.remove('hidden');
+      musicBtn.classList.remove('hidden');
+      bgMusic.volume = 0.35;
+      bgMusic.play().catch(() => {});
+      typeLetter();
+      createHearts(18);
+    });
+
+    musicBtn.addEventListener('click', () => {
+      if (bgMusic.paused) { bgMusic.play(); musicBtn.textContent = '🎵'; }
+      else { bgMusic.pause(); musicBtn.textContent = '🔇'; }
+    });
+
+    function updateCounter(){
+      const now = new Date();
+      const diff = Math.max(0, now - dataInicio);
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = hours;
+      document.getElementById('minutes').textContent = minutes;
+      document.getElementById('seconds').textContent = seconds;
+    }
+    setInterval(updateCounter, 1000); updateCounter();
+
+    let typed = false;
+    function typeLetter(){
+      if(typed) return; typed = true;
+      const el = document.getElementById('typedLetter');
+      let i = 0;
+      const timer = setInterval(() => {
+        el.textContent += textoCarta.charAt(i);
+        i++;
+        if(i >= textoCarta.length) clearInterval(timer);
+      }, 28);
+    }
+
+    function createHearts(qtd = 30){
+      const area = document.getElementById('hearts');
+      for(let i=0;i<qtd;i++){
+        const h = document.createElement('div');
+        h.className = 'float-heart';
+        h.textContent = ['❤️','💖','💕','💘'][Math.floor(Math.random()*4)];
+        h.style.left = Math.random()*100 + 'vw';
+        h.style.animationDelay = Math.random()*1.5 + 's';
+        h.style.fontSize = (18 + Math.random()*22) + 'px';
+        area.appendChild(h);
+        setTimeout(()=>h.remove(), 5200);
+      }
+    }
+    document.getElementById('againBtn').addEventListener('click',()=>createHearts(45));
+
+
+    // ====== ANIMAÇÕES AO ROLAR A PÁGINA ======
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.18 });
+
+    document.querySelectorAll('.memory, .reveal').forEach(el => observer.observe(el));
+
+    // ====== MINI GAME ======
+    const board = document.getElementById('gameBoard');
+    const player = document.getElementById('player');
+    const playBtn = document.getElementById('playGameBtn');
+    const scoreEl = document.getElementById('score');
+    const timeEl = document.getElementById('timeLeft');
+    let score = 0, timeLeft = 40, playing = false, playerX = 50, spawnTimer, clockTimer;
+
+    function setPlayerX(x){
+      playerX = Math.max(5, Math.min(95, x));
+      player.style.left = playerX + '%';
+    }
+
+    window.addEventListener('keydown', e => {
+      if(!playing) return;
+      if(e.key === 'ArrowLeft') setPlayerX(playerX - 5);
+      if(e.key === 'ArrowRight') setPlayerX(playerX + 5);
+    });
+
+    board.addEventListener('pointermove', e => {
+      if(!playing) return;
+      const rect = board.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      setPlayerX(x);
+    });
+
+    playBtn.addEventListener('click', startGame);
+
+    function startGame(){
+      board.querySelectorAll('.item').forEach(i=>i.remove());
+      score = 0; timeLeft = 40; playing = true;
+      scoreEl.textContent = score; timeEl.textContent = timeLeft;
+      playBtn.disabled = true; playBtn.textContent = 'Jogando...';
+      spawnTimer = setInterval(spawnItem, 650);
+      clockTimer = setInterval(()=>{
+        timeLeft--; timeEl.textContent = timeLeft;
+        if(timeLeft <= 0) endGame(false);
+      },1000);
+    }
+
+    function spawnItem(){
+      const item = document.createElement('div');
+      const isHeart = Math.random() > .25;
+      item.className = 'item';
+      item.dataset.type = isHeart ? 'heart' : 'bad';
+      item.textContent = isHeart ? '❤️' : '☁️';
+      item.style.left = Math.random() * 92 + '%';
+      item.style.animationDuration = (2.4 + Math.random()*1.4) + 's';
+      board.appendChild(item);
+      const check = setInterval(()=>{
+        if(!playing || !item.parentNode){clearInterval(check);return}
+        if(collide(player,item)){
+          if(item.dataset.type === 'heart'){
+            score++; scoreEl.textContent = score; item.remove(); createHearts(2);
+            if(score >= 15) endGame(true);
+          } else {
+            score = Math.max(0, score - 2); scoreEl.textContent = score; item.remove();
+          }
+        }
+      },40);
+      setTimeout(()=>{item.remove();clearInterval(check)},4200);
+    }
+
+    function collide(a,b){
+      const r1=a.getBoundingClientRect(), r2=b.getBoundingClientRect();
+      return !(r1.right<r2.left || r1.left>r2.right || r1.bottom<r2.top || r1.top>r2.bottom);
+    }
+
+    function endGame(win){
+      playing=false; clearInterval(spawnTimer); clearInterval(clockTimer);
+      playBtn.disabled=false; playBtn.textContent='Jogar novamente';
+      board.querySelectorAll('.item').forEach(i=>i.remove());
+      if(win){
+        createHearts(60);
+        setTimeout(()=>document.getElementById('final').scrollIntoView({behavior:'smooth'}),600);
+      } else {
+        alert('O tempo acabou! Tenta de novo para desbloquear a mensagem final ❤️');
+      }
+    }
+  </script>
+</body>
+</html>
